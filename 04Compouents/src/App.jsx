@@ -8,6 +8,8 @@ function App() {
       <div class="container text-center">
         <CompAppName></CompAppName>
         <Todoitem></Todoitem>
+        <Todoitem></Todoitem>
+
         <div class="row">
           <div class="col-6">siddharth nehra</div>
           <div class="col-4">24/7/2005</div>
