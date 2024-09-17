@@ -2,6 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import Fooditem from "./fooditem";
 import Foodhunger from "./Foodhunger";
+import styles from "./Item.module.css"
+import Foodinput from "./Foodinput";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +25,7 @@ function App() {
   return (
     <>
       <h1 className="nehra">food item</h1>
+      <Foodinput></Foodinput>
       <Foodhunger list={fooditems}></Foodhunger>
       <Fooditem foodlist={fooditems}></Fooditem>
     </>
