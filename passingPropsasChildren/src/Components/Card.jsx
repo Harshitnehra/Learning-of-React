@@ -1,8 +1,11 @@
 import React from 'react'
 
-const card = ({name}) => {
+const card = ({children} ,{name}) => {
   return (
-    <div>{name}</div>
+    <div>
+    <p>add two num {name}</p>
+    {children}
+    </div>
   )
 }
 
