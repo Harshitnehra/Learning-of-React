@@ -3,11 +3,12 @@ import Card from "./Components/Card"
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setname] = useState("harshit")
 
   return (
     <div>
-      <Card name ="love harshit"></Card>
+      <Card name={name} setname={setname}></Card>
+      <h1>prents value : {name}</h1>
     </div>
   )
 }
