@@ -1,13 +1,21 @@
 import React from 'react'
-import { usercontext } from '../App'
+import { themecontext } from '../App'
 import { useContext } from 'react'
 
 
 const CardC = () => {
-    const user = useContext(usercontext)
+    const {theme ,settheme} = useContext(themecontext)
+    function hundleclick(){
+        if (theme === "light") {
+            settheme("dark")
+        } else {
+            settheme("light")
+        }
+        
+    }
   return (
     <div>
-      {user.name}
+      <button onClick={hundleclick}>change theme</button>
     </div>
   )
 }

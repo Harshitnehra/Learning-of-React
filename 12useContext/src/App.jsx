@@ -3,19 +3,21 @@ import CardA from './Components/CardA'
 import './App.css'
 
 
-const usercontext = createContext()
+const themecontext = createContext()
 function App() {
   
-  const [user, setuser] = useState({name:"love harshit"})
+  const [theme, settheme] = useState("light")
 
   return (
     <>
-    <usercontext.Provider value={user}>
+    <themecontext.Provider value={{theme ,settheme}}>
+      <div id='container' style={{background:theme==="light"?"beige":"black"}}>
       <CardA></CardA>
-    </usercontext.Provider>
+      </div>
+    </themecontext.Provider>
     </>
   )
 }
 
 export default App
-export {usercontext}
+export {themecontext}
