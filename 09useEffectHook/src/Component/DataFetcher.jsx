@@ -28,4 +28,7 @@ function DataFetcher() {
     </div>
   );
 }
+
+
+// rafc
 export default DataFetcher

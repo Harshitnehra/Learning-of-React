@@ -7,8 +7,10 @@ function App() {
 
   return (
     <div>
+      <p>hlooo{name}</p>
       <Card name={name} setname={setname}></Card>
-      <h1>prents value : {name}</h1>
+      <Card name={name} setname={setname}></Card>
+      <Card name={name} setname={setname}></Card>
     </div>
   )
 }
