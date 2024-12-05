@@ -1,19 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-function handleinput(){
-  console.log("somet");
-  
-}
+  function togglebutton() {
+    let bodyStyle = document.body.style;
+    if (bodyStyle.backgroundColor === 'black') {
+      bodyStyle.backgroundColor = 'white';
+    } else {
+      bodyStyle.backgroundColor = 'black';
+    }
+  }
   return (
-    <>
-    <input onChange={handleinput}/>
-      <button onClick={() =>{alert("i am clicked")}}>click me</button>
-    </> 
+    <div>
+      <button onClick={togglebutton}>click me to light and dark mode</button>
+    </div>
   )
 }
 
