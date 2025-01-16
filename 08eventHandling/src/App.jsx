@@ -1,20 +1,37 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import Colorswich from './Colorswich';
 
 function App() {
-  function togglebutton() {
-    let bodyStyle = document.body.style;
-    if (bodyStyle.backgroundColor === 'black') {
-      bodyStyle.backgroundColor = 'white';
-    } else {
-      bodyStyle.backgroundColor = 'black';
-    }
+  const [click, setClick] = useState(0);
+
+  function getRandomLightColor() {
+    let r = 150 + Math.round(100 * Math.random());
+    let g = 150 + Math.round(100 * Math.random());
+    let b = 150 + Math.round(100 * Math.random());
+    return `rgb(${r}, ${g}, ${b})`;
   }
+
+  function handleChangeColor() {
+    let bodyStyle = document.body.style;
+    bodyStyle.backgroundColor = getRandomLightColor();
+  }
+
+  function handleClickOutside() {
+    setClick((c) => c + 1);
+  }
+
   return (
-    <div>
-      <button onClick={togglebutton}>click me to light and dark mode</button>
+    <div
+      style={{ width: '300px', height: '300px', background: 'red' }}
+      onClick={handleClickOutside}
+    >
+      <Colorswich handleChangeColor={handleChangeColor} />
+      <br />
+      <br />
+      <h2>Clicks on the page: {click}</h2>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
