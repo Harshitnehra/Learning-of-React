@@ -1,23 +1,25 @@
 import { useState ,createContext} from 'react'
 import CardA from './Components/CardA'
 import './App.css'
-
-
-const themecontext = createContext()
+const ThemeContext = createContext();
+const nameContext = createContext();
 function App() {
-  
-  const [theme, settheme] = useState("light")
-
+const [theme , setTheme]= useState("light")
+const [name , setname] = useState({name1:"harshit"})
   return (
     <>
-    <themecontext.Provider value={{theme ,settheme}}>
-      <div id='container' style={{background:theme==="light"?"beige":"black"}}>
-      <CardA></CardA>
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <div id="container" style={{background:theme==="light"?"beige":"black"}}>
+         <CardA/>
       </div>
-    </themecontext.Provider>
+      <nameContext.Provider value={name}>
+
+      </nameContext.Provider>
+    </ThemeContext.Provider>
     </>
   )
 }
 
 export default App
-export {themecontext}
+export {ThemeContext}
+export {nameContext}

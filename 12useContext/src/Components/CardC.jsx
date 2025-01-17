@@ -1,21 +1,24 @@
 import React from 'react'
-import { themecontext } from '../App'
+import { ThemeContext } from '../App'
+import { nameContext } from '../App'
 import { useContext } from 'react'
 
-
 const CardC = () => {
-    const {theme ,settheme} = useContext(themecontext)
-    function hundleclick(){
-        if (theme === "light") {
-            settheme("dark")
-        } else {
-            settheme("light")
-        }
-        
-    }
+   const {theme , setTheme} = useContext(ThemeContext);
+   const name  = useContext(nameContext)
+   function handleclick(){
+    if (theme === "light")
+      setTheme("dark")
+    else
+    setTheme("light")
+   }
   return (
     <div>
-      <button onClick={hundleclick}>change theme</button>
+      
+      <button onClick={handleclick}>
+        change theme
+      </button>
+      {name}
     </div>
   )
 }
